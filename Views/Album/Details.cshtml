@@ -1,0 +1,51 @@
+@model MusicBlog.Models.Album
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Album</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Released)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Released)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Poster)
+        </dt>
+        <dd class = "col-sm-10">
+            @* @Html.DisplayFor(model => model.Poster) *@
+            <img src="@Model.Poster" alt="..." height="100px" width="100px">
+
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Singer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Singer.Name)
+            <a asp-controller="Singer" asp-action="Details" asp-route-id="@Model.Singer.Id"> -See</a>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> 
+    <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+</div>

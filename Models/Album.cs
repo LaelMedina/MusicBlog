@@ -14,4 +14,5 @@ public class Album
     public string? Poster { get; set; }
     public int SingerId { get; set; }
     public Singer? Singer { get; set; }
+    public List<AlbumSong> AlbumSongs { get; set; }
 }

@@ -11,4 +11,5 @@ public class Song
     public string? Released { get; set; }
     public string? Lyrics { get; set; }
     public string? Poster { get; set; }
+    public List<AlbumSong> AlbumSongs { get; set; }
 }
